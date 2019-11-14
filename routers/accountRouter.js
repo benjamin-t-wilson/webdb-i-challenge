@@ -61,6 +61,20 @@ router.put(
   }
 );
 
+router.delete("/:id", validateID, (req, res) => {
+  const id = req.params.id;
+
+  db.del()
+    .from("accounts")
+    .where({ id })
+    .then(() => {
+      res.status(204).end();
+    })
+    .catch(err => {
+      res.status(500).json({ message: "Error deleting account", err });
+    });
+});
+
 // doot doot magic floot
 // middleware lives here
 // these comments are just creating space
