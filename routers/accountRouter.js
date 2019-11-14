@@ -27,6 +27,12 @@ router.get("/:id", validateID, (req, res) => {
     });
 });
 
+// doot doot magic floot
+// middleware lives here
+// these comments are just creating space
+// a beautiful wall, that really works
+// in colorado
+
 function validateID(req, res, next) {
   const id = req.params.id;
   db.select("*")
